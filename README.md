@@ -2,8 +2,6 @@
 
 A lightweight and customizable wrapper for integrating [MUI Alert](https://mui.com/material-ui/react-alert/?srsltid=AfmBOorG16fDWlZUFpNDld6CbDRdpPOA8eTPa9eEriOYl9CywGZFowmu) into your react application, enabling you to build a floating stack of alerts within minutes.
 
-This library utilizes [Context API](https://react.dev/reference/react/hooks#context-hooks) and [React Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks) for simplified management of floating alert stacks.
-
 ## Demo
 
 [![Edit mui-alert-provider demo](https://codesandbox.io/static/img/play-codesandbox.svg)](
