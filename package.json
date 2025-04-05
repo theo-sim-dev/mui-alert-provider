@@ -1,0 +1,60 @@
+{
+  "name": "mui-alert-provider",
+  "version": "0.1.0",
+  "description": "A lightweight provider for creating and managing floating MUI Alert stacks effortlessly.",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "keywords": [
+    "mui",
+    "mui-component",
+    "mui-alert",
+    "material-ui",
+    "material-ui-component",
+    "material-ui-alert",
+    "alert",
+    "notification",
+    "floating-alert",
+    "floating-notification",
+    "toast",
+    "toast-notification",
+    "toast-alert",
+    "floating-toast",
+    "floating-toast-notification",
+    "floating-toast-alert",
+    "react",
+    "reactjs",
+    "react-component",
+    "context",
+    "context-api",
+    "context-provider",
+    "context-hook",
+    "hook",
+    "provider"
+  ],
+  "author": "Theo Sim",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir dist --copy-files"
+  },
+  "peerDependencies": {
+    "@mui/material": ">= 5.0.0",
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.27.0",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "eslint": "^9.24.0",
+    "prettier": "^3.5.3"
+  }
+}
