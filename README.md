@@ -1,11 +1,13 @@
 # MUI Alert Provider
 
-A lightweight and customizable wrapper for integrating MUI Alerts into your application, enabling you to build a floating stack of alerts within minutes.
+A lightweight and customizable wrapper for integrating [MUI Alert](https://mui.com/material-ui/react-alert/?srsltid=AfmBOorG16fDWlZUFpNDld6CbDRdpPOA8eTPa9eEriOYl9CywGZFowmu) into your react application, enabling you to build a floating stack of alerts within minutes.
+
+This library utilizes [Context API](https://react.dev/reference/react/hooks#context-hooks) and [React Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks) for simplified management of floating alert stacks.
 
 ## Features
 
-- Floating stacks of MUI Alerts that seamlessly integrate with any web UI.
-- Effortless integration with React components.
+- Floating stacks of MUI Alerts that integrate seamlessly with any web UI.
+- Utilizes the [Context API](https://react.dev/reference/react/hooks#context-hooks) and [React Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks) to enable quick integration with any React application.
 - Fully customizable to match your application's design.
 - Built with accessibility in mind, fully meeting MUI's accessibility requirements to ensure an inclusive experience for all users.
 
