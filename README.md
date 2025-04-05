@@ -4,6 +4,11 @@ A lightweight and customizable wrapper for integrating [MUI Alert](https://mui.c
 
 This library utilizes [Context API](https://react.dev/reference/react/hooks#context-hooks) and [React Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks) for simplified management of floating alert stacks.
 
+## Demo
+
+[![Edit mui-alert-provider demo](https://codesandbox.io/static/img/play-codesandbox.svg)](
+https://codesandbox.io/p/sandbox/mui-alert-provider-demo-kj6mjz)
+
 ## Features
 
 - Floating stacks of MUI Alerts that integrate seamlessly with any web UI.
@@ -73,10 +78,10 @@ Wraps your application and provides alert context.
 |-------------------|------------|----------|-----------|-----------------------------------------------------------------------------|
 | `children`        | `node`     | Yes      | N/A       | React nodes to render inside the provider.                                 |
 | `limit`           | `number`   | No       | `4`       | Maximum number of alerts to display at a time.                             |
-| `duration`        | `number`   | No       | `300`     | Duration (in milliseconds) for which an alert's animation is displayed.    |
-| `defaultSeverity` | `string`   | No       | `"error"` | Default severity level for alerts.                                         |
-| `muiAlertProps`   | `object`   | No       | `{}`      | Props to be passed directly to the underlying MUI `Alert` component.       |
-| `muiStackProps`   | `object`   | No       | `{}`      | Props to be passed directly to the underlying MUI `Stack` component.       |
+| `duration`        | `number`   | No       | `300`     | The time (in milliseconds) that the alert's animation lasts, including its appearance and disappearance transitions.    |
+| `defaultSeverity` | `string`   | No       | `"error"` | Default severity level for alerts. For more information, see [Severity](https://mui.com/material-ui/react-alert/?srsltid=AfmBOoomXuefwF-JxIyQhjW4KL5jMm74WOxa0mhIfbry_zlMxKkeWcJG#severity) in MUI Alert                                        |
+| `muiAlertProps`   | `object`   | No       | `{}`      | Props to be passed directly to the underlying [MUI Alert](https://mui.com/material-ui/api/alert/) component.       |
+| `muiStackProps`   | `object`   | No       | `{}`      | Props to be passed directly to the underlying [MUI Stack](https://mui.com/material-ui/api/stack/?srsltid=AfmBOoo9EDLoz-uJHnsPGlFBYMrs7xKsXUtydbBX5fwk5u_LXyIEc0Ad) component      |
 
 ### `useAlert`
 
@@ -86,7 +91,7 @@ Hook to access alert functions.
 
 | Method                          | Description                                                                                     |
 |---------------------------------|-------------------------------------------------------------------------------------------------|
-| `addAlert({ message, severity })` | Adds a new alert to the queue. `severity` defaults to `defaultSeverity` provided to `AlertProvider`, which defaults to `error`. |
+| `addAlert({ message, severity })` | Adds a new alert to the stack. `severity` defaults to `defaultSeverity` provided to `AlertProvider`, which defaults to `error`. |
 
 ## Contributing
 

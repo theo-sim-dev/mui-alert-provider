@@ -7,7 +7,7 @@ const TestComponent = () => {
 
   const handleShowAlert = severity => {
     addAlert({
-      message: "This is a test alert!",
+      message: `This is a test alert for ${severity}`,
       severity,
     });
   };
@@ -27,6 +27,7 @@ const TestComponent = () => {
         <button onClick={() => handleShowAlert("error")}>Show Error</button>
         <button onClick={() => handleShowAlert("warning")}>Show Warning</button>
         <button onClick={() => handleShowAlert("info")}>Show Info</button>
+        <button onClick={() => handleShowAlert("success")}>Show Success</button>
       </div>
     </div>
   );
