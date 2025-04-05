@@ -30,6 +30,9 @@
     "context-provider",
     "context-hook",
     "hook",
+    "react-hook",
+    "hooks",
+    "react-hooks",
     "provider"
   ],
   "files": [
@@ -41,6 +44,7 @@
     "type": "git",
     "url": "https://github.com/theo-sim-dev/mui-alert-provider"
   },
+  "homepage": "https://github.com/theo-sim-dev/mui-alert-provider",
   "scripts": {
     "build": "babel src --out-dir dist --copy-files"
   },
