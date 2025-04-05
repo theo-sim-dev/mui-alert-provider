@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Compile to ES6 for modern JavaScript environments
+    "module": "ESNext", // Use ESNext modules for compatibility with modern bundlers
+    "jsx": "react-jsx", // Recommended for React projects
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Allow default imports from CommonJS modules
+    "declaration": true, // Generate .d.ts files
+    "declarationDir": "./dist", // Output directory for .d.ts files
+    "outDir": "./dist", // Output directory for compiled JavaScript
+    "moduleResolution": "node", // Resolve modules in Node.js style
+    "rootDir": "./src", // Specify the root directory of input files
+    "allowSyntheticDefaultImports": true, // Allow default imports for compatibility
+    "skipLibCheck": true // Skip type checking for .d.ts files in node_modules
+  },
+  "include": ["src/**/*"], // Include all files in the src directory
+  "exclude": ["node_modules", "dist", "demo"] // Exclude unnecessary directories
+}

@@ -3,8 +3,13 @@
   "description": "A lightweight provider for creating and managing floating MUI Alert stacks effortlessly.",
   "author": "Theo Sim",
   "version": "0.2.0",
-  "main": "dist/index.js",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && babel src --out-dir dist --copy-files",
+    "demo": "npm run build && cd demo && npm run dev"
+  },
   "keywords": [
     "mui",
     "mui-component",
@@ -45,10 +50,6 @@
     "url": "https://github.com/theo-sim-dev/mui-alert-provider"
   },
   "homepage": "https://github.com/theo-sim-dev/mui-alert-provider",
-  "scripts": {
-    "build": "babel src --out-dir dist --copy-files",
-    "demo": "cd demo && npm run dev"
-  },
   "peerDependencies": {
     "@mui/material": ">= 5.0.0",
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
@@ -62,11 +63,14 @@
     "@emotion/styled": "^11.14.0",
     "@eslint/js": "^9.24.0",
     "@mui/material": "^7.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
     "eslint": "^9.24.0",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "typescript": "^5.8.3"
   }
 }

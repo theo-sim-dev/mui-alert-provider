@@ -1,9 +1,17 @@
 "use client";
 import React, {useCallback, useEffect, useState} from "react";
-import PropTypes from "prop-types";
 import {Alert as MuiAlert, Stack} from "@mui/material";
+import { AlertType } from "./types";
 
-const Alert = ({
+interface AlertProps {
+  alerts: AlertType[];
+  removeAlert: (index: number) => void;
+  duration: number; // Duration in milliseconds
+  muiAlertProps: object;
+  muiStackProps: object;
+}
+
+const Alert: React.FC<AlertProps> = ({
   alerts,
   removeAlert,
   duration,
@@ -29,7 +37,7 @@ const Alert = ({
   }, [alerts, duration]);
 
   const handleClose = useCallback(
-    index => {
+    (index: number) => {
       removeAlert(index);
     },
     [removeAlert],
@@ -77,19 +85,6 @@ const Alert = ({
       })}
     </Stack>
   );
-};
-
-Alert.propTypes = {
-  alerts: PropTypes.arrayOf(
-    PropTypes.shape({
-      severity: PropTypes.string.isRequired,
-      message: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  removeAlert: PropTypes.func.isRequired,
-  duration: PropTypes.number, // Duration in milliseconds
-  muiAlertProps: PropTypes.object,
-  muiStackProps: PropTypes.object,
 };
 
 export default Alert;
