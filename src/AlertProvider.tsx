@@ -2,8 +2,7 @@
 import React, {useCallback, useState} from "react";
 import AlertComponent from "./Alert";
 import {Box, useMediaQuery} from "@mui/material";
-import { AlertType } from './types';
-import { AlertContextType, AlertProviderProps } from "./index.d";
+import { AlertType, AlertContextType, AlertProviderProps} from './types';
 
 const AlertContext = React.createContext<AlertContextType | undefined>(undefined);
 

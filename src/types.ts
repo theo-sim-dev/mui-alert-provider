@@ -1,5 +1,27 @@
-import {Alert as AlertInterface} from "./index.d";
+import { ReactNode } from "react";
+import { AlertColor } from "@mui/material";
 
-export interface AlertType extends AlertInterface {
+export interface Alert {
+	message: string;
+	severity?: AlertColor;
+}
+export interface AlertType extends Alert {
 	isNewAlert?: boolean;
+}
+
+export interface AlertProviderProps {
+	children: ReactNode;
+	limit?: number;
+	mobileLimit?: number;
+	width?: string;
+	minWidth?: string;
+	containerSx?: object;
+	duration?: number;
+	mobileBreakpoint?: string;
+	muiAlertProps?: object;
+	muiStackProps?: object;
+}
+
+export type AlertContextType = {
+	addAlert: (alert: Alert) => void;
 }
