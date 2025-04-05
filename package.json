@@ -8,7 +8,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && babel src --out-dir dist --copy-files",
-    "demo": "cd demo && npm run dev"
+    "demo": "npm run build && cd demo && npm run dev"
   },
   "keywords": [
     "mui",
