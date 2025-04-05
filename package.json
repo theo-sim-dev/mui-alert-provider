@@ -2,7 +2,7 @@
   "name": "mui-alert-provider",
   "description": "A lightweight provider for creating and managing floating MUI Alert stacks effortlessly.",
   "author": "Theo Sim",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "dist/index.js",
   "license": "MIT",
   "keywords": [
