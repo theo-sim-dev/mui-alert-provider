@@ -36,7 +36,14 @@ const Alert = ({
   );
 
   return (
-    <Stack spacing={1} id="mui-alerts-provider-stack" {...muiStackProps}>
+    <Stack
+      spacing={1}
+      id="mui-alerts-provider-stack"
+      sx={{
+        p: 1,
+      }}
+      {...muiStackProps}
+    >
       {alerts.map((alert, index) => {
         const {isNewAlert} = alert;
 
