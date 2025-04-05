@@ -6,8 +6,7 @@ This library utilizes [Context API](https://react.dev/reference/react/hooks#cont
 
 ## Demo
 
-[![Edit mui-alert-provider demo](https://codesandbox.io/static/img/play-codesandbox.svg)](
-https://codesandbox.io/p/sandbox/mui-alert-provider-demo-kj6mjz)
+[![Edit mui-alert-provider demo](https://kj6mjz.csb.app/)
 
 ## Features
 
