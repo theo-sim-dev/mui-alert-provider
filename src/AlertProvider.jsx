@@ -60,7 +60,6 @@ const AlertProvider = ({
         <Box
           id="mui-alerts-provider-container"
           sx={{
-            height: 1,
             width: "20%",
             minWidth: 280,
             position: "absolute",
