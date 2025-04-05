@@ -1,6 +1,7 @@
 import React from "react";
 import {createRoot} from "react-dom/client";
 import {AlertProvider, useAlert} from "../src";
+import {Button} from "@mui/material";
 
 const TestComponent = () => {
   const {addAlert} = useAlert();
@@ -24,10 +25,34 @@ const TestComponent = () => {
     >
       <h1>Test MUI Alert Provider</h1>
       <div style={{display: "flex", gap: "10px"}}>
-        <button onClick={() => handleShowAlert("error")}>Show Error</button>
-        <button onClick={() => handleShowAlert("warning")}>Show Warning</button>
-        <button onClick={() => handleShowAlert("info")}>Show Info</button>
-        <button onClick={() => handleShowAlert("success")}>Show Success</button>
+        <Button
+          onClick={() => handleShowAlert("error")}
+          variant="outlined"
+          color="error"
+        >
+          Show Error
+        </Button>
+        <Button
+          onClick={() => handleShowAlert("warning")}
+          variant="outlined"
+          color="warning"
+        >
+          Show Warning
+        </Button>
+        <Button
+          onClick={() => handleShowAlert("info")}
+          variant="outlined"
+          color="info"
+        >
+          Show Info
+        </Button>
+        <Button
+          onClick={() => handleShowAlert("success")}
+          variant="outlined"
+          color="success"
+        >
+          Show Success
+        </Button>
       </div>
     </div>
   );
