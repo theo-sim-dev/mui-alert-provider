@@ -1,16 +1,16 @@
 "use client";
 import React, {useCallback, useState} from "react";
-import PropTypes from "prop-types";
-import Alert from "./Alert";
+import AlertComponent from "./Alert";
 import {Box, useMediaQuery} from "@mui/material";
+import { AlertType } from './types';
+import { AlertContextType, AlertProviderProps } from "./index.d";
 
-const AlertContext = React.createContext();
+const AlertContext = React.createContext<AlertContextType | undefined>(undefined);
 
-const AlertProvider = ({
+const AlertProvider: React.FC<AlertProviderProps> = ({
   children,
   limit = 4,
   mobileLimit = 1,
-  defaultSeverity = "error",
   width = "20%",
   minWidth = "280px",
   containerSx = {},
@@ -19,12 +19,12 @@ const AlertProvider = ({
   muiAlertProps = {},
   muiStackProps = {},
 }) => {
-  const [alerts, setAlerts] = useState([]);
+  const [alerts, setAlerts] = useState<AlertType[]>([]);
   const isMobile = useMediaQuery(`(max-width:${mobileBreakpoint})`);
   const limitToApply = isMobile ? mobileLimit : limit;
 
   const addAlert = useCallback(
-    ({message, severity = defaultSeverity}) => {
+    ({message, severity}: AlertType) => {
       const newAlert = {message, severity, isNewAlert: true};
 
       setAlerts(prevAlerts => {
@@ -45,14 +45,14 @@ const AlertProvider = ({
         });
       }, duration);
     },
-    [defaultSeverity, limitToApply, duration],
+    [limitToApply, duration],
   );
 
-  const removeAlert = useCallback(index => {
+  const removeAlert = useCallback((index: number) => {
     setAlerts(prevAlerts => {
       // Reduce prevAlerts to exclude prevAlerts[index].
       // Also remove the isNewAlert property from the alert.
-      return prevAlerts.reduce((acc, alert, i) => {
+      return prevAlerts.reduce((acc: AlertType[], alert: AlertType, i: number) => {
         if (i !== index) {
           acc.push({...alert, isNewAlert: false});
         }
@@ -76,7 +76,7 @@ const AlertProvider = ({
             ...containerSx,
           }}
         >
-          <Alert
+          <AlertComponent
             alerts={alerts}
             removeAlert={removeAlert}
             duration={duration}
@@ -91,19 +91,5 @@ const AlertProvider = ({
 };
 
 export {AlertContext};
-
-AlertProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-  limit: PropTypes.number,
-  mobileLimit: PropTypes.number,
-  defaultSeverity: PropTypes.string,
-  width: PropTypes.string,
-  minWidth: PropTypes.string,
-  containerSx: PropTypes.object,
-  duration: PropTypes.number,
-  mobileBreakpoint: PropTypes.string,
-  muiAlertProps: PropTypes.object,
-  muiStackProps: PropTypes.object,
-};
 
 export default AlertProvider;
