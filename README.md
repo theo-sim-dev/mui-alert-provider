@@ -7,6 +7,12 @@ A lightweight and customizable wrapper for integrating [MUI Alert](https://mui.c
 [![Edit mui-alert-provider demo](https://codesandbox.io/static/img/play-codesandbox.svg)](
 https://codesandbox.io/p/sandbox/mui-alert-provider-demo-kj6mjz)
 
+### Desktop View
+![Desktop View](./public/desktop.gif)
+
+### Mobile View
+![Mobile View](./public/mobile.gif)
+
 ## Features
 
 - Floating stacks of MUI Alerts that integrate seamlessly with any web UI.
