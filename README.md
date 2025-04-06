@@ -1,6 +1,9 @@
 # MUI Alert Provider
+[![npm](https://img.shields.io/npm/v/mui-alert-provider)](https://www.npmjs.com/package/mui-alert-provider)
 
-A lightweight and customizable wrapper for integrating [MUI Alert](https://mui.com/material-ui/react-alert/?srsltid=AfmBOorG16fDWlZUFpNDld6CbDRdpPOA8eTPa9eEriOYl9CywGZFowmu) into your react application, enabling you to build a floating stack of alerts within minutes.
+Make your alerts float! A lightweight provider for Material-UI’s Alert that fits seamlessly into any web UI.
+
+🚀Build a stack of [MUI Alert](https://mui.com/material-ui/react-alert/?srsltid=AfmBOorG16fDWlZUFpNDld6CbDRdpPOA8eTPa9eEriOYl9CywGZFowmu) in just minutes.
 
 ## Demo
 
@@ -15,10 +18,11 @@ https://codesandbox.io/p/sandbox/mui-alert-provider-demo-kj6mjz)
 
 ## Features
 
-- Floating stacks of MUI Alerts that integrate seamlessly with any web UI.
-- Utilizes the [Context API](https://react.dev/reference/react/hooks#context-hooks) and [React Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks) to enable quick integration with any React application.
-- Fully customizable to match your application's design.
-- Built with accessibility in mind, fully meeting MUI's accessibility requirements to ensure an inclusive experience for all users.
+- Floating stacks of MUI Alerts that integrate seamlessly into any web UI.
+- Powered by the [Context API](https://react.dev/reference/react/hooks#context-hooks) and [React Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks) for quick setup in any React app.
+- Trigger alerts from anywhere in your component tree — no prop drilling needed.
+- Fully customizable to match your app’s look and feel.
+- Built with accessibility in mind, meeting MUI’s standards to ensure an inclusive experience for all users.
 
 ## Installation
 
@@ -99,7 +103,7 @@ Hook to access alert functions.
 
 | Method                          | Description                                                                                     |
 |---------------------------------|-------------------------------------------------------------------------------------------------|
-| `addAlert({ message, severity })` | Adds a new alert to the stack. `severity` defaults to `defaultSeverity` provided to `AlertProvider`, which defaults to `error`. |
+| `addAlert({ message, severity })` | Adds a new alert to the stack. `severity` defaults to `"success"`, as defined by MUI. |
 
 ## Contributing
 
