@@ -50,6 +50,9 @@
     "url": "https://github.com/theo-sim-dev/mui-alert-provider"
   },
   "homepage": "https://github.com/theo-sim-dev/mui-alert-provider",
+  "publishConfig": {
+    "@theo-sim-dev:registry": "https://npm.pkg.github.com"
+  },
   "peerDependencies": {
     "@mui/material": ">= 5.0.0",
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
