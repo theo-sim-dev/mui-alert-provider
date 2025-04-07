@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useState} from "react";
 import {Alert as MuiAlert, Stack} from "@mui/material";
-import { AlertType } from "./types";
+import {AlertType} from "./types";
 
 interface AlertProps {
   alerts: AlertType[];

@@ -1,9 +1,11 @@
 import React, {useCallback, useState} from "react";
 import AlertComponent from "./Alert";
 import {Box, useMediaQuery} from "@mui/material";
-import { AlertType, AlertContextType, AlertProviderProps} from './types';
+import {AlertType, AlertContextType, AlertProviderProps} from "./types";
 
-const AlertContext = React.createContext<AlertContextType | undefined>(undefined);
+const AlertContext = React.createContext<AlertContextType | undefined>(
+  undefined,
+);
 
 const AlertProvider: React.FC<AlertProviderProps> = ({
   children,
@@ -50,12 +52,15 @@ const AlertProvider: React.FC<AlertProviderProps> = ({
     setAlerts(prevAlerts => {
       // Reduce prevAlerts to exclude prevAlerts[index].
       // Also remove the isNewAlert property from the alert.
-      return prevAlerts.reduce((acc: AlertType[], alert: AlertType, i: number) => {
-        if (i !== index) {
-          acc.push({...alert, isNewAlert: false});
-        }
-        return acc;
-      }, []);
+      return prevAlerts.reduce(
+        (acc: AlertType[], alert: AlertType, i: number) => {
+          if (i !== index) {
+            acc.push({...alert, isNewAlert: false});
+          }
+          return acc;
+        },
+        [],
+      );
     });
   }, []);
 
