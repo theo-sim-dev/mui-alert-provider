@@ -1,4 +1,3 @@
-"use client";
 import React, {useCallback, useState} from "react";
 import AlertComponent from "./Alert";
 import {Box, useMediaQuery} from "@mui/material";

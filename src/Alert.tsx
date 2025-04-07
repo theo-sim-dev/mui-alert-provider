@@ -1,4 +1,3 @@
-"use client";
 import React, {useCallback, useEffect, useState} from "react";
 import {Alert as MuiAlert, Stack} from "@mui/material";
 import { AlertType } from "./types";
