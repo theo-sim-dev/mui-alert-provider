@@ -1,6 +1,6 @@
 {
   "name": "mui-alert-provider",
-  "description": "A lightweight provider for creating and managing floating MUI Alert stacks effortlessly.",
+  "description": "Make your alerts float! A lightweight provider for Material UI’s Alert that fits seamlessly into any web UI.",
   "author": "Theo Sim",
   "version": "1.0.1",
   "license": "MIT",
@@ -50,6 +50,8 @@
     "material-ui",
     "material-ui-component",
     "material-ui-alert",
+    "mui-alert-provider",
+    "mui-snackbar-provider",
     "alert",
     "notification",
     "floating-alert",
@@ -57,6 +59,8 @@
     "toast",
     "toast-notification",
     "toast-alert",
+    "snackbar",
+    "mui-snackbar",
     "floating-toast",
     "floating-toast-notification",
     "floating-toast-alert",
@@ -67,10 +71,12 @@
     "context-api",
     "context-provider",
     "context-hook",
+    "react-context",
     "hook",
     "react-hook",
     "hooks",
     "react-hooks",
-    "provider"
+    "provider",
+    "react-provider"
   ]
 }
