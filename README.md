@@ -1,9 +1,12 @@
 # MUI Alert Provider
 [![npm](https://img.shields.io/npm/v/mui-alert-provider)](https://www.npmjs.com/package/mui-alert-provider)
+[![license](https://img.shields.io/badge/license-MIT-blue)](https://www.npmjs.com/package/mui-alert-provider)
+[![typescript](https://img.shields.io/badge/typescript-blue?logo=typescript&logoColor=f5f5f5)](https://www.npmjs.com/package/mui-alert-provider)
+[![react](https://img.shields.io/badge/react-blue?logo=react)](https://www.npmjs.com/package/mui-alert-provider)
 
 Make your alerts float! A lightweight provider for Material-UI’s Alert that fits seamlessly into any web UI.
 
-Build a stack of [MUI Alert](https://mui.com/material-ui/react-alert/?srsltid=AfmBOorG16fDWlZUFpNDld6CbDRdpPOA8eTPa9eEriOYl9CywGZFowmu) in just minutes🚀.
+Build a stack of [MUI Alert](https://mui.com/material-ui/react-alert/?srsltid=AfmBOorG16fDWlZUFpNDld6CbDRdpPOA8eTPa9eEriOYl9CywGZFowmu) in just minutes🚀
 
 ## Demo
 
