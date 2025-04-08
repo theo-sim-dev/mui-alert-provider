@@ -3,7 +3,7 @@
 
 Make your alerts float! A lightweight provider for Material-UI’s Alert that fits seamlessly into any web UI.
 
-🚀Build a stack of [MUI Alert](https://mui.com/material-ui/react-alert/?srsltid=AfmBOorG16fDWlZUFpNDld6CbDRdpPOA8eTPa9eEriOYl9CywGZFowmu) in just minutes.
+Build a stack of [MUI Alert](https://mui.com/material-ui/react-alert/?srsltid=AfmBOorG16fDWlZUFpNDld6CbDRdpPOA8eTPa9eEriOYl9CywGZFowmu) in just minutes🚀.
 
 ## Demo
 
@@ -18,11 +18,18 @@ https://codesandbox.io/p/sandbox/mui-alert-provider-demo-kj6mjz)
 
 ## Features
 
-- Floating stacks of MUI Alerts that integrate seamlessly into any web UI.
-- Powered by the [Context API](https://react.dev/reference/react/hooks#context-hooks) and [React Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks) for quick setup in any React app.
-- Trigger alerts from anywhere in your component tree — no prop drilling needed.
-- Fully customizable to match your app’s look and feel.
-- Built with accessibility in mind, meeting MUI’s standards to ensure an inclusive experience for all users.
+- **Floating Stacks of MUI Alerts**  
+  Display beautifully-styled, floating stacks of MUI Alerts that integrate seamlessly into any web UI. Fully customizable to match your design system.
+
+- **Easy Integration with Context API & React Hooks**  
+  Built on the [Context API](https://react.dev/reference/react/hooks#context-hooks) and [React Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks) for fast setup. Easily trigger alerts from anywhere in your React component tree.
+
+- **Lightweight & Performant**  
+  Designed to be super lightweight with minimal impact on your bundle size and blazing-fast performance.
+
+- **Accessible by Design**  
+  Follows MUI’s accessibility standards to deliver an inclusive and user-friendly experience for all users.
+
 
 ## Installation
 
