@@ -59,7 +59,7 @@ const TestComponent = () => {
 };
 
 const App = () => (
-  <AlertProvider limit={5}>
+  <AlertProvider limit={5} mobileLimit={2}>
     <TestComponent />
   </AlertProvider>
 );
