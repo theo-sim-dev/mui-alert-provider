@@ -1,23 +1,33 @@
 import React, {useState} from "react";
 import {createRoot} from "react-dom/client";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {AlertProvider, useAlert} from "../dist";
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Box,
   Button,
-  Card,
-  CardContent,
   FormControl,
   FormControlLabel,
   FormLabel,
   Radio,
   RadioGroup,
+  TextField,
   Typography,
 } from "@mui/material";
 import {AlertPosition} from "../dist/types";
 
 const alertPositions = ["top-right", "top-left", "bottom-left", "bottom-right"];
 
-const TestComponent = ({position, setPosition}) => {
+const TestComponent = ({
+  position,
+  setPosition,
+  limit,
+  setLimit,
+  mobileLimit,
+  setMobileLimit,
+}) => {
   const {addAlert} = useAlert();
 
   const handleShowAlert = severity => {
@@ -35,10 +45,10 @@ const TestComponent = ({position, setPosition}) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        height: "95vh",
       }}
     >
-      <Box sx={{width: 600}}>
+      <Box sx={{width: "100%", maxWidth: 600}}>
         <Typography
           variant="h4"
           sx={{
@@ -77,20 +87,15 @@ const TestComponent = ({position, setPosition}) => {
             Show Success
           </Button>
         </Box>
-        <Typography
-          variant="h6"
-          sx={{
-            alignSelf: "flex-start",
-          }}
-        >
-          Props
-        </Typography>
-        <Card
-          sx={{
-            my: 2,
-          }}
-        >
-          <CardContent>
+        <Accordion defaultExpanded sx={{mt: 5}}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            <Typography component="span">Important Props</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
             <FormControl>
               <FormLabel id="alert-position-group-label">
                 Alert Position
@@ -114,8 +119,35 @@ const TestComponent = ({position, setPosition}) => {
                 ))}
               </RadioGroup>
             </FormControl>
-          </CardContent>
-        </Card>
+            <TextField
+              label="Limit"
+              type="number"
+              value={limit}
+              onChange={event => {
+                setLimit(parseInt(event.target.value, 10));
+              }}
+              sx={{
+                my: 2,
+                mr: 1,
+                width: "45%",
+              }}
+              helperText="The maximum number of alerts to show at once. 5 by default."
+            />
+            <TextField
+              label="Mobile Limit"
+              type="number"
+              value={mobileLimit}
+              onChange={event => {
+                setMobileLimit(parseInt(event.target.value, 10));
+              }}
+              sx={{
+                my: 2,
+                width: "45%",
+              }}
+              helperText="The maximum number of alerts to show at once on mobile. 2 by default."
+            />
+          </AccordionDetails>
+        </Accordion>
       </Box>
     </Box>
   );
@@ -123,10 +155,19 @@ const TestComponent = ({position, setPosition}) => {
 
 const App = () => {
   const [position, setPosition] = useState<AlertPosition>("top-right");
+  const [limit, setLimit] = useState<number>(5);
+  const [mobileLimit, setMobileLimit] = useState<number>(1);
 
   return (
-    <AlertProvider limit={5} mobileLimit={2} position={position}>
-      <TestComponent position={position} setPosition={setPosition} />
+    <AlertProvider limit={limit} mobileLimit={mobileLimit} position={position}>
+      <TestComponent
+        position={position}
+        setPosition={setPosition}
+        limit={limit}
+        setLimit={setLimit}
+        mobileLimit={mobileLimit}
+        setMobileLimit={setMobileLimit}
+      />
     </AlertProvider>
   );
 };
