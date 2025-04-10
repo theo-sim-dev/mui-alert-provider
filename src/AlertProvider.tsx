@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useMemo, useState} from "react";
 import AlertComponent from "./Alert";
 import {Box, useMediaQuery} from "@mui/material";
 import {AlertType, AlertContextType, AlertProviderProps} from "./types";
@@ -11,6 +11,7 @@ const AlertProvider: React.FC<AlertProviderProps> = ({
   children,
   limit = 4,
   mobileLimit = 1,
+  position = "top-right",
   width = "20%",
   minWidth = "280px",
   containerSx = {},
@@ -21,7 +22,9 @@ const AlertProvider: React.FC<AlertProviderProps> = ({
 }) => {
   const [alerts, setAlerts] = useState<AlertType[]>([]);
   const isMobile = useMediaQuery(`(max-width:${mobileBreakpoint})`);
-  const limitToApply = isMobile ? mobileLimit : limit;
+  const limitToApply = useMemo(() => {
+    return isMobile ? mobileLimit : limit;
+  }, [isMobile, limit, mobileLimit]);
 
   const addAlert = useCallback(
     ({message, severity}: AlertType) => {
@@ -64,18 +67,53 @@ const AlertProvider: React.FC<AlertProviderProps> = ({
     });
   }, []);
 
+  const getSxPosition = useCallback(() => {
+    if (position === "top-right") {
+      return {
+        top: 0,
+        right: 0,
+      };
+    } else if (position === "top-left") {
+      return {
+        top: 0,
+        left: 0,
+      };
+    } else if (position === "bottom-right") {
+      return {
+        bottom: 0,
+        right: 0,
+      };
+    } else if (position === "bottom-left") {
+      return {
+        bottom: 0,
+        left: 0,
+      };
+    } else {
+      // Default to top-right if the position is not recognized.
+      console.warn(
+        `Unrecognized position "${position}". Defaulting to "top-right".`,
+      );
+
+      return {
+        top: 0,
+        right: 0,
+      };
+    }
+  }, [position]);
+
   return (
     <AlertContext.Provider value={{addAlert}}>
       <Box>
         <Box
           id="mui-alerts-provider-container"
           sx={{
+            boxSizing: "border-box", // Include padding in the width.
             width: !isMobile ? width : "100%",
             minWidth: !isMobile ? minWidth : "100%",
             position: "absolute",
-            top: 0,
-            right: 0,
             zIndex: 9999,
+            p: 1,
+            ...getSxPosition(),
             ...containerSx,
           }}
         >

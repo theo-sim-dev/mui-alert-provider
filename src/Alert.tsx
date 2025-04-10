@@ -43,14 +43,7 @@ const Alert: React.FC<AlertProps> = ({
   );
 
   return (
-    <Stack
-      spacing={1}
-      id="mui-alerts-provider-stack"
-      sx={{
-        p: 1,
-      }}
-      {...muiStackProps}
-    >
+    <Stack spacing={1} id="mui-alerts-provider-stack" {...muiStackProps}>
       {alerts.map((alert, index) => {
         const {isNewAlert} = alert;
 

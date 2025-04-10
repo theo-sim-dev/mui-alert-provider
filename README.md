@@ -96,14 +96,15 @@ Wraps your application and provides alert context.
 |-------------------|------------|----------|-----------|-----------------------------------------------------------------------------|
 | `children`        | `node`     | Yes      | N/A       | React nodes to render inside the provider.                                 |
 | `limit`           | `number`   | No       | `4`       | The maximum number of alerts that can be displayed simultaneously.                             |
-| `mobileLimit`     | `number`   | No       | `1`       | The maximum number of alerts that can be displayed simultaneously on screens with a width smaller than `mobileBreakpoint`.                       |
-| `width`          | `string`   | No       | `"20%"`    | Specifies the width of the alert container. Accepts any valid CSS width value. On resolutions smaller than `mobileBreakpoint`x, it will automatically adjust to 100% for better mobile responsiveness. |
-| `minWidth`       | `string`   | No       | `"280px"`    | Specifies the minimum width of the alert container. Accepts any valid CSS width value. On resolutions smaller than `mobileBreakpoint`x, it will automatically adjust to 100% for better mobile responsiveness. |
-| `containerSx`    | `object`   | No       | `{}`       | The `sx` prop to customize the styling of the alert container. Accepts any valid MUI `sx` object. |
+| `mobileLimit`     | `number`   | No       | `1`       | The maximum number of alerts that can be displayed simultaneously on screens smaller than `mobileBreakpoint`.                       |
+| `position`        | `AlertPosition`   | No       | `"top-right"` | Specifies where the alerts will appear on the screen. Options include `"top-right"`, `"top-left"`, `"bottom-left"`, or `"bottom-right"`. |
+| `width`           | `string`   | No       | `"20%"`       | The width of the alert container. Accepts any valid CSS width value. On screens smaller than `mobileBreakpoint`, it automatically adjusts to 100% for optimal mobile responsiveness.	|
+| `minWidth`        | `string`   | No       | `"280px"`     | Sets the minimum width of the alert container. Accepts any valid CSS width value. On screens smaller than `mobileBreakpoint`, it automatically adjusts to 100% for optimal mobile responsiveness. |
+| `containerSx`     | `SxProps`   | No       | `{}`          | A custom MUI `sx` object to style the container that holds the stack of alerts.	|
 | `duration`        | `number`   | No       | `300`     | The time (in milliseconds) that the alert's animation lasts, including its appearance and disappearance transitions.    |
-| `muiAlertProps`   | `object`   | No       | `{}`       | Props to be passed directly to the underlying [MUI Alert](https://mui.com/material-ui/api/alert/) component. |
-| `muiStackProps`   | `object`   | No       | `{}`       | Props to be passed directly to the underlying [MUI Stack](https://mui.com/material-ui/api/stack/) component. |
-| `mobileBreakpoint` | `number`   | No       | `600`     | The breakpoint width in pixels to consider a device as mobile. Alerts will adjust their behavior accordingly. |
+| `muiAlertProps`   | `AlertProps`   | No       | `{}`       | Props to be passed directly to the underlying [MUI Alert](https://mui.com/material-ui/api/alert/) component. |
+| `muiStackProps`   | `StackProps`   | No       | `{}`       | Props to be passed directly to the underlying [MUI Stack](https://mui.com/material-ui/api/stack/) component. |
+| `mobileBreakpoint` | `number`   | No       | `600`     | The breakpoint width in pixels to consider a device as mobile. Alerts will adjust their behavior accordingly. 600px by default. |
 
 ### `useAlert`
 
@@ -113,7 +114,7 @@ Hook to access alert functions.
 
 | Method                          | Description                                                                                     |
 |---------------------------------|-------------------------------------------------------------------------------------------------|
-| `addAlert({ message, severity })` | Adds a new alert to the stack. `severity` defaults to `"success"`, as defined by MUI. |
+| `addAlert({ message, severity })` | Adds a new alert to the stack. `severity` defaults to `"success"` as defined by MUI. |
 
 ## Contributing
 

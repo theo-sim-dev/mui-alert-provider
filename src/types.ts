@@ -10,10 +10,17 @@ export interface AlertType extends Alert {
   isNewAlert?: boolean;
 }
 
+export type AlertPosition =
+  | "top-right"
+  | "top-left"
+  | "bottom-right"
+  | "bottom-left";
+
 export interface AlertProviderProps {
   children: ReactNode;
   limit?: number;
   mobileLimit?: number;
+  position?: AlertPosition;
   width?: string;
   minWidth?: string;
   containerSx?: SxProps;
