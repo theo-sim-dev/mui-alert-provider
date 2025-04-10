@@ -11,6 +11,7 @@ const AlertProvider: React.FC<AlertProviderProps> = ({
   children,
   limit = 4,
   mobileLimit = 1,
+  position = "top-right",
   width = "20%",
   minWidth = "280px",
   containerSx = {},
@@ -64,6 +65,30 @@ const AlertProvider: React.FC<AlertProviderProps> = ({
     });
   }, []);
 
+  const getSxPosition = () => {
+    if (position === "top-right") {
+      return {
+        top: 0,
+        right: 0,
+      };
+    } else if (position === "top-left") {
+      return {
+        top: 0,
+        left: 0,
+      };
+    } else if (position === "bottom-right") {
+      return {
+        bottom: 0,
+        right: 0,
+      };
+    } else if (position === "bottom-left") {
+      return {
+        bottom: 0,
+        left: 0,
+      };
+    }
+  };
+
   return (
     <AlertContext.Provider value={{addAlert}}>
       <Box>
@@ -73,9 +98,9 @@ const AlertProvider: React.FC<AlertProviderProps> = ({
             width: !isMobile ? width : "100%",
             minWidth: !isMobile ? minWidth : "100%",
             position: "absolute",
-            top: 0,
-            right: 0,
             zIndex: 9999,
+            p: 1,
+            ...getSxPosition(),
             ...containerSx,
           }}
         >
