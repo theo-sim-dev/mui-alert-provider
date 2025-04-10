@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {createRoot} from "react-dom/client";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import {AlertProvider, useAlert} from "../dist";
+import {AlertPosition, AlertProvider, useAlert} from "../dist";
 import {
   Accordion,
   AccordionDetails,
@@ -16,7 +16,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import {AlertPosition} from "../dist/types";
 
 const alertPositions = ["top-right", "top-left", "bottom-left", "bottom-right"];
 
