@@ -2,7 +2,7 @@
   "name": "mui-alert-provider",
   "description": "Make your alerts float! A lightweight provider for Material UI’s Alert that fits seamlessly into any web UI.",
   "author": "Theo Sim",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
