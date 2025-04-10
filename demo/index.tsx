@@ -49,45 +49,56 @@ const TestComponent = ({
       }}
     >
       <Box sx={{width: "100%", maxWidth: 600}}>
-        <Typography
-          variant="h4"
+        <Box
           sx={{
-            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            mb: 2,
           }}
         >
-          Test MUI Alert Provider
-        </Typography>
-        <Box sx={{display: "flex", gap: "10px", my: 2}}>
-          <Button
-            onClick={() => handleShowAlert("error")}
-            variant="contained"
-            color="error"
+          <Typography
+            variant="h4"
+            sx={{
+              textAlign: "center",
+              width: "100%",
+            }}
           >
-            Show Error
-          </Button>
-          <Button
-            onClick={() => handleShowAlert("warning")}
-            variant="contained"
-            color="warning"
-          >
-            Show Warning
-          </Button>
-          <Button
-            onClick={() => handleShowAlert("info")}
-            variant="contained"
-            color="info"
-          >
-            Show Info
-          </Button>
-          <Button
-            onClick={() => handleShowAlert("success")}
-            variant="contained"
-            color="success"
-          >
-            Show Success
-          </Button>
+            Test MUI Alert Provider
+          </Typography>
+          <Box sx={{display: "flex", gap: "10px", my: 2}}>
+            <Button
+              onClick={() => handleShowAlert("error")}
+              variant="contained"
+              color="error"
+            >
+              Show Error
+            </Button>
+            <Button
+              onClick={() => handleShowAlert("warning")}
+              variant="contained"
+              color="warning"
+            >
+              Show Warning
+            </Button>
+            <Button
+              onClick={() => handleShowAlert("info")}
+              variant="contained"
+              color="info"
+            >
+              Show Info
+            </Button>
+            <Button
+              onClick={() => handleShowAlert("success")}
+              variant="contained"
+              color="success"
+            >
+              Show Success
+            </Button>
+          </Box>
         </Box>
-        <Accordion defaultExpanded sx={{mt: 5}}>
+        <Accordion defaultExpanded>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
