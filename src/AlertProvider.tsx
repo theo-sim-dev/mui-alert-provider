@@ -107,6 +107,7 @@ const AlertProvider: React.FC<AlertProviderProps> = ({
         <Box
           id="mui-alerts-provider-container"
           sx={{
+            boxSizing: "border-box", // Include padding in the width.
             width: !isMobile ? width : "100%",
             minWidth: !isMobile ? minWidth : "100%",
             position: "absolute",
