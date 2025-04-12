@@ -1,7 +1,6 @@
-import React, {useState} from "react";
-import {createRoot} from "react-dom/client";
+import React from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import {AlertPosition, AlertProvider, useAlert} from "../dist";
+import {AlertPosition, useAlert} from "../dist";
 import {
   Accordion,
   AccordionDetails,

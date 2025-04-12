@@ -1,18 +1,11 @@
-import {defineConfig} from "eslint/config";
-import globals from "globals";
-import js from "@eslint/js";
-import pluginReact from "eslint-plugin-react";
+// @ts-check
+import eslint from "@eslint/js";
+import tseslint from "typescript-eslint";
 
-export default defineConfig([
-  {files: ["**/*.{js,mjs,cjs,jsx}"]},
+export default tseslint.config(
   {
-    files: ["**/*.{js,mjs,cjs,jsx}"],
-    languageOptions: {globals: globals.browser},
+    ignores: ["dist/**"], // Exclude all files under the dist directory
   },
-  {
-    files: ["**/*.{js,mjs,cjs,jsx}"],
-    plugins: {js},
-    extends: ["js/recommended"],
-  },
-  pluginReact.configs.flat.recommended,
-]);
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
+);
