@@ -76,28 +76,36 @@ const Demo: React.FC<DemoProps> = ({
           </Typography>
           <Box sx={{display: "flex", gap: "10px", my: 2}}>
             <Button
-              onClick={() => handleShowAlert("error")}
+              onClick={() => {
+                return handleShowAlert("error");
+              }}
               variant="contained"
               color="error"
             >
               Show Error
             </Button>
             <Button
-              onClick={() => handleShowAlert("warning")}
+              onClick={() => {
+                return handleShowAlert("warning");
+              }}
               variant="contained"
               color="warning"
             >
               Show Warning
             </Button>
             <Button
-              onClick={() => handleShowAlert("info")}
+              onClick={() => {
+                return handleShowAlert("info");
+              }}
               variant="contained"
               color="info"
             >
               Show Info
             </Button>
             <Button
-              onClick={() => handleShowAlert("success")}
+              onClick={() => {
+                return handleShowAlert("success");
+              }}
               variant="contained"
               color="success"
             >
@@ -127,14 +135,16 @@ const Demo: React.FC<DemoProps> = ({
                   setPosition(event.target.value as AlertPosition);
                 }}
               >
-                {alertPositions.map(position => (
-                  <FormControlLabel
-                    key={position}
-                    value={position}
-                    control={<Radio />}
-                    label={position}
-                  />
-                ))}
+                {alertPositions.map(position => {
+                  return (
+                    <FormControlLabel
+                      key={position}
+                      value={position}
+                      control={<Radio />}
+                      label={position}
+                    />
+                  );
+                })}
               </RadioGroup>
             </FormControl>
             <TextField
