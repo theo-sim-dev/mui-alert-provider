@@ -16,3 +16,6 @@ npm-debug.log*a
 
 # MacOS
 .DS_Store
+
+# local testing
+playground
