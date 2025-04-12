@@ -47,6 +47,7 @@ yarn add mui-alert-provider
 ```
 
 ## Usage
+
 Wrap your application with the `AlertProvider`.  
 If you're using the `ThemeProvider` from MUI, ensure that the `AlertProvider` is a child of it.
 
@@ -92,29 +93,27 @@ Wraps your application and provides alert context.
 
 #### Props
 
-| Prop Name         | Type       | Required | Default   | Description                                                                 |
-|-------------------|------------|----------|-----------|-----------------------------------------------------------------------------|
-| `children`        | `node`     | Yes      | N/A       | React nodes to render inside the provider.                                 |
-| `limit`           | `number`   | No       | `4`       | The maximum number of alerts that can be displayed simultaneously.                             |
-| `mobileLimit`     | `number`   | No       | `1`       | The maximum number of alerts that can be displayed simultaneously on screens smaller than `mobileBreakpoint`.                       |
-| `position`        | `AlertPosition`   | No       | `"top-right"` | Specifies where the alerts will appear on the screen. Options include `"top-right"`, `"top-left"`, `"bottom-left"`, or `"bottom-right"`. |
-| `width`           | `string`   | No       | `"20%"`       | The width of the alert container. Accepts any valid CSS width value. On screens smaller than `mobileBreakpoint`, it automatically adjusts to 100% for optimal mobile responsiveness.	|
-| `minWidth`        | `string`   | No       | `"280px"`     | Sets the minimum width of the alert container. Accepts any valid CSS width value. On screens smaller than `mobileBreakpoint`, it automatically adjusts to 100% for optimal mobile responsiveness. |
-| `containerSx`     | `SxProps`   | No       | `{}`          | A custom MUI `sx` object to style the container that holds the stack of alerts.	|
-| `duration`        | `number`   | No       | `300`     | The time (in milliseconds) that the alert's animation lasts, including its appearance and disappearance transitions.    |
-| `muiAlertProps`   | `AlertProps`   | No       | `{}`       | Props to be passed directly to the underlying [MUI Alert](https://mui.com/material-ui/api/alert/) component. |
-| `muiStackProps`   | `StackProps`   | No       | `{}`       | Props to be passed directly to the underlying [MUI Stack](https://mui.com/material-ui/api/stack/) component. |
-| `mobileBreakpoint` | `number`   | No       | `600`     | The breakpoint width in pixels to consider a device as mobile. Alerts will adjust their behavior accordingly. 600px by default. |
+| Prop Name         | Type       | Default   | Description                                                                 |
+|-------------------|------------|-----------|-----------------------------------------------------------------------------|
+| `children`        | `node`     | N/A       | React nodes to render inside the provider.                                 |
+| `limit`           | `number`   | `4`       | The maximum number of alerts that can be displayed simultaneously.                             |
+| `mobileLimit`     | `number`   | `1`       | The maximum number of alerts that can be displayed simultaneously on screens smaller than `mobileBreakpoint`.                       |
+| `position`        | `AlertPosition`   | `"top-right"` | Specifies where the alerts will appear on the screen. Options include `"top-right"`, `"top-left"`, `"bottom-left"`, or `"bottom-right"`. |
+| `width`           | `string`   | `"20%"`       | The width of the alert container. Accepts any valid CSS width value. On screens smaller than `mobileBreakpoint`, it automatically adjusts to 100% for optimal mobile responsiveness.	|
+| `minWidth`        | `string`   | `"280px"`     | Sets the minimum width of the alert container. Accepts any valid CSS width value. On screens smaller than `mobileBreakpoint`, it automatically adjusts to 100% for optimal mobile responsiveness. |
+| `containerSx`     | `SxProps`   | `{}`          | A custom MUI `sx` object to style the container that holds the stack of alerts.	|
+| `duration`        | `number`   | `300`     | The time (in milliseconds) that the alert's animation lasts, including its appearance and disappearance transitions.    |
+| `muiAlertProps`   | `AlertProps`   | `{}`       | Props to be passed directly to the underlying [MUI Alert](https://mui.com/material-ui/api/alert/) component. |
+| `muiStackProps`   | `StackProps`   | `{}`       | Props to be passed directly to the underlying [MUI Stack](https://mui.com/material-ui/api/stack/) component. |
+| `mobileBreakpoint` | `number`   | `600`     | The breakpoint width in pixels to consider a device as mobile. Alerts will adjust their behavior accordingly. 600px by default. |
 
 ### `useAlert`
 
-Hook to access alert functions.
-
 #### Methods
 
-| Method                          | Description                                                                                     |
-|---------------------------------|-------------------------------------------------------------------------------------------------|
-| `addAlert({ message, severity })` | Adds a new alert to the stack. `severity` defaults to `"success"` as defined by MUI. |
+| Method                          | Type                              | Description                                                                                     |
+|---------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------|
+| `addAlert({ message, severity })` | `(alert: Alert) => void`          | Adds a new alert to the stack. `severity` defaults to `"success"` as defined by MUI. |
 
 ## Contributing
 
