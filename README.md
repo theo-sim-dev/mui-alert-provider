@@ -1,6 +1,7 @@
 # MUI Alert Provider
-[![npm](https://img.shields.io/npm/v/mui-alert-provider)](https://www.npmjs.com/package/mui-alert-provider)
-[![license](https://img.shields.io/badge/license-MIT-blue)](https://www.npmjs.com/package/mui-alert-provider)
+
+[![npm](https://img.shields.io/npm/v/mui-alert-provider?color=orange)](https://www.npmjs.com/package/mui-alert-provider)
+[![license](https://img.shields.io/badge/license-MIT-green)](https://www.npmjs.com/package/mui-alert-provider)
 [![typescript](https://img.shields.io/badge/typescript-blue?logo=typescript&logoColor=f5f5f5)](https://www.npmjs.com/package/mui-alert-provider)
 [![react](https://img.shields.io/badge/react-blue?logo=react)](https://www.npmjs.com/package/mui-alert-provider)
 
@@ -84,6 +85,9 @@ const MyComponent = () => {
 	return <button onClick={handleClick}>Show Alert</button>;
 };
 ```
+
+[Check out this playground](
+https://codesandbox.io/p/sandbox/mui-alert-provider-demo-kj6mjz) 🎮
 
 ## API
 
