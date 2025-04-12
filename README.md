@@ -49,8 +49,10 @@ yarn add mui-alert-provider
 
 ## Usage
 
-Wrap your application with the `AlertProvider`.  
-If you're using the `ThemeProvider` from MUI, ensure that the `AlertProvider` is a child of it.
+[Check out this playground](
+https://codesandbox.io/p/sandbox/mui-alert-provider-demo-kj6mjz) 🎮
+
+Wrap your application with the `AlertProvider`. If you're using the `ThemeProvider` from MUI, ensure that the `AlertProvider` is a child of it.
 
 ```jsx
 import React from 'react';
@@ -66,8 +68,7 @@ const App = () => (
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-Trigger alerts from any part of your application using the `useAlert` hook. 
-This hook provides access to the `addAlert` method, allowing you to add a new alert to the stack.
+Trigger alerts from any part of your application using the `useAlert` hook. This hook provides access to the `addAlert` method, allowing you to add a new alert to the stack.
 
 ```jsx
 import { useAlert } from 'mui-alert-provider';
@@ -85,9 +86,6 @@ const MyComponent = () => {
 	return <button onClick={handleClick}>Show Alert</button>;
 };
 ```
-
-[Check out this playground](
-https://codesandbox.io/p/sandbox/mui-alert-provider-demo-kj6mjz) 🎮
 
 ## API
 
