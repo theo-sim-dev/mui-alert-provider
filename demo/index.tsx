@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {AlertPosition, AlertProvider} from "../dist";
-import Demo from "./Demo";
+import Demo from "./src/Demo";
 import {createRoot} from "react-dom/client";
 
 const App = () => {
