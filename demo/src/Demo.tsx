@@ -17,7 +17,12 @@ import {
   Typography,
 } from "@mui/material";
 
-const alertPositions = ["top-right", "top-left", "bottom-left", "bottom-right"];
+const alertPositions: AlertPosition[] = [
+  "top-right",
+  "top-left",
+  "bottom-left",
+  "bottom-right",
+];
 
 interface DemoProps {
   position: AlertPosition;
@@ -28,14 +33,14 @@ interface DemoProps {
   setMobileLimit: (mobileLimit: number) => void;
 }
 
-const Demo: React.FC<DemoProps> = ({
+const Demo = ({
   position,
   setPosition,
   limit,
   setLimit,
   mobileLimit,
   setMobileLimit,
-}) => {
+}: DemoProps) => {
   const {addAlert} = useAlert();
 
   const handleShowAlert = (severity: AlertColor) => {
